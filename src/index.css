@@ -3,3 +3,18 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: tomato;
+}
+
+.box {
+  width: 80px;
+  height: 20px;
+  border: 1px solid black;
+  text-align: center;
+}
