@@ -6,19 +6,7 @@ function App() {
 
   const displayBoxes = (arr) => {
     let newArr = [...arr];
-    return newArr.sort((el1, el2) => el2 - el1).map((el) => <Box key={el} id={el} />);
-  };
-
-  const addBox = () => {
-    let newArr = [...stack];
-    newArr.push(newArr[newArr.length - 1] + 1);
-    setStack(newArr);
-  };
-
-  const removeBox = () => {
-    let newArr = [...stack];
-    newArr.pop();
-    setStack(newArr);
+    return newArr.sort((box1, box2) => box2 - box1).map((box) => <Box key={box} id={box} />);
   };
 
   const stackHandler = (operation) => {
@@ -27,7 +15,7 @@ function App() {
       if (newArr.length === 0) {
         newArr = [0];
       } else {
-        newArr.push(newArr[newArr.length - 1] + 1);
+        newArr.push(newArr.length);
       }
     } else if (operation === 'remove') {
       if (newArr.length === 0) {
@@ -51,6 +39,11 @@ function App() {
         </button>
       </div>
       <div className="stack">{displayBoxes(stack)}</div>
+      <div className="table">
+        <div className="table-top"></div>
+        <div className="table-leg left"></div>
+        <div className="table-leg right"></div>
+      </div>
     </>
   );
 }
